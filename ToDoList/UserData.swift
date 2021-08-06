@@ -24,6 +24,10 @@ class ToDo: ObservableObject {
     func check(id: Int){
         self.ToDoList[id].isChecked.toggle()
     }
+    func add(data:SingleToDo)  {
+        self.ToDoList.append(SingleToDo(title: data.title, duedate: data.duedate, id: self.count))
+        self.count += 1
+    }
 }
 
 struct SingleToDo: Identifiable {

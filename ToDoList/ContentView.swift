@@ -8,22 +8,47 @@
 import SwiftUI
 
 struct ContentView: View {
-  @ObservedObject var UserData: ToDo = ToDo(data: [
-    SingleToDo(title: "吃饭", duedate: Date()),
-    SingleToDo(title: "写作业", duedate: Date()),
-    SingleToDo(title: "运动", duedate: Date()),
-    SingleToDo(title: "睡觉", duedate: Date()),
-  ])
-
+    @ObservedObject var UserData: ToDo = ToDo(data: [
+        SingleToDo(title: "吃饭", duedate: Date()),
+        SingleToDo(title: "写作业", duedate: Date()),
+        SingleToDo(title: "运动", duedate: Date()),
+        SingleToDo(title: "睡觉", duedate: Date()),
+    ])
+    @State var showEditingPage: Bool = false
+    
+    
   var body: some View {
-    ScrollView(.vertical, showsIndicators: true) {
-      VStack {
-        ForEach(self.UserData.ToDoList) { item in
-          SingleCardView(index: item.id)
-            .environmentObject(self.UserData)
-            .padding()
+    ZStack{
+        NavigationView{
+            ScrollView(.vertical, showsIndicators: true) {
+              VStack {
+                ForEach(self.UserData.ToDoList) { item in
+                  SingleCardView(index: item.id)
+                    .environmentObject(self.UserData)
+                    .padding()
+                }
+              }
+            }
+            .navigationBarTitle("提醒事项")
         }
-      }
+        
+        HStack {
+            Spacer()
+            VStack {
+                Spacer()
+                Button(action:{
+                    self.showEditingPage = true
+                }){Image(systemName: "plus.circle.fill")
+                    .resizable()
+                    .aspectRatio(contentMode:.fit)
+                    .frame(width: 80)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)}
+            }
+            .sheet(isPresented: self.$showEditingPage, content: {
+                EditingPage()
+                    .environmentObject(self.UserData)
+            })
+        }
     }
   }
 }

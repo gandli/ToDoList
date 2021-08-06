@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0639A31026BD7CD600783880 /* EditingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0639A30F26BD7CD600783880 /* EditingPage.swift */; };
 		0674825E26BD457400B3DEED /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674825D26BD457400B3DEED /* ToDoListApp.swift */; };
 		0674826026BD457400B3DEED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674825F26BD457400B3DEED /* ContentView.swift */; };
 		0674826226BD457500B3DEED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0674826126BD457500B3DEED /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0639A30F26BD7CD600783880 /* EditingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingPage.swift; sourceTree = "<group>"; };
 		0674825A26BD457400B3DEED /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0674825D26BD457400B3DEED /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		0674825F26BD457400B3DEED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				0674825D26BD457400B3DEED /* ToDoListApp.swift */,
 				0674825F26BD457400B3DEED /* ContentView.swift */,
+				0639A30F26BD7CD600783880 /* EditingPage.swift */,
 				06B8548926BD59D700B51414 /* UserData.swift */,
 				0674826126BD457500B3DEED /* Assets.xcassets */,
 				0674826626BD457500B3DEED /* Info.plist */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06B8548A26BD59D700B51414 /* UserData.swift in Sources */,
+				0639A31026BD7CD600783880 /* EditingPage.swift in Sources */,
 				0674826026BD457400B3DEED /* ContentView.swift in Sources */,
 				0674825E26BD457400B3DEED /* ToDoListApp.swift in Sources */,
 			);
