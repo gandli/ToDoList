@@ -13,6 +13,7 @@
 		0674826526BD457500B3DEED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0674826426BD457500B3DEED /* Preview Assets.xcassets */; };
 		0674827026BD457500B3DEED /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674826F26BD457500B3DEED /* ToDoListTests.swift */; };
 		0674827B26BD457500B3DEED /* ToDoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674827A26BD457500B3DEED /* ToDoListUITests.swift */; };
+		06B8548A26BD59D700B51414 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B8548926BD59D700B51414 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		0674827626BD457500B3DEED /* ToDoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0674827A26BD457500B3DEED /* ToDoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListUITests.swift; sourceTree = "<group>"; };
 		0674827C26BD457500B3DEED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06B8548926BD59D700B51414 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				0674825D26BD457400B3DEED /* ToDoListApp.swift */,
 				0674825F26BD457400B3DEED /* ContentView.swift */,
+				06B8548926BD59D700B51414 /* UserData.swift */,
 				0674826126BD457500B3DEED /* Assets.xcassets */,
 				0674826626BD457500B3DEED /* Info.plist */,
 				0674826326BD457500B3DEED /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B8548A26BD59D700B51414 /* UserData.swift in Sources */,
 				0674826026BD457400B3DEED /* ContentView.swift in Sources */,
 				0674825E26BD457400B3DEED /* ToDoListApp.swift in Sources */,
 			);
