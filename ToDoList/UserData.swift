@@ -25,6 +25,7 @@ class ToDo: ObservableObject {
                     title: item.title,
                     duedate: item.duedate,
                     isChecked: item.isChecked,
+                    isFavorite: item.isFavorite,
                     id: self.count))
             count += 1
         }
@@ -34,7 +35,11 @@ class ToDo: ObservableObject {
         self.dataStore()
     }
     func add(data:SingleToDo)  {
-        self.ToDoList.append(SingleToDo(title: data.title, duedate: data.duedate, id: self.count))
+        self.ToDoList.append(SingleToDo(
+                                title: data.title,
+                                duedate: data.duedate,
+                                isFavorite: data.isFavorite,
+                                id: self.count))
         self.count += 1
         self.sort()
         self.dataStore()
@@ -42,6 +47,7 @@ class ToDo: ObservableObject {
     func edit(id:Int,data:SingleToDo)  {
         self.ToDoList[id].title = data.title
         self.ToDoList[id].duedate = data.duedate
+        self.ToDoList[id].isFavorite = data.isFavorite
         self.ToDoList[id].isChecked = false
         self.sort()
         self.dataStore()
@@ -70,6 +76,7 @@ struct SingleToDo: Identifiable,Codable{
     var title:String = ""
     var duedate:Date = Date()
     var isChecked:Bool = false
+    var isFavorite:Bool = false
     var deleted:Bool = false
     var id: Int = 0
 }

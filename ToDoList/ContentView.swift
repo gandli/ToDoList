@@ -15,8 +15,12 @@ func initUserData() -> [SingleToDo] {
       if !item.deleted {
         output.append(
           SingleToDo(
-            title: item.title, duedate: item.duedate, isChecked: item.isChecked,
-            deleted: item.deleted, id: output.count))
+            title: item.title,
+            duedate: item.duedate,
+            isChecked: item.isChecked,
+            isFavorite: item.isFavorite,
+            deleted: item.deleted,
+            id: output.count))
       }
     }
   }
@@ -171,11 +175,18 @@ struct SingleCardView: View {
             EditingPage(
               title: self.UserData.ToDoList[self.index].title,
               duedate: self.UserData.ToDoList[self.index].duedate,
+                isFavorite: self.UserData.ToDoList[self.index].isFavorite,
               id: self.index
             )
             .environmentObject(self.UserData)
           })
-
+        if self.UserData.ToDoList[index].isFavorite{
+            Image(systemName: "star.fill")
+                .imageScale(.large)
+                .foregroundColor(.yellow)
+        }
+        
+        
       if !self.editingMode {
         Image(
           systemName: self.UserData.ToDoList[index].isChecked ? "checkmark.square.fill" : "square"
@@ -214,10 +225,10 @@ struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView(
       UserData: ToDo(data: [
-        SingleToDo(title: "吃饭", duedate: Date()),
-        SingleToDo(title: "写作业", duedate: Date()),
-        SingleToDo(title: "运动", duedate: Date()),
-        SingleToDo(title: "睡觉", duedate: Date()),
+        SingleToDo(title: "吃饭", duedate: Date(),isFavorite: true),
+        SingleToDo(title: "写作业", duedate: Date(),isFavorite: false),
+        SingleToDo(title: "运动", duedate: Date(),isFavorite: true),
+        SingleToDo(title: "睡觉", duedate: Date(),isFavorite: false),
       ]))
   }
 }

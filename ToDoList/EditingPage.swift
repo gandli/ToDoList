@@ -13,6 +13,7 @@ struct EditingPage: View {
     
     @State var title: String = ""
     @State var duedate: Date = Date()
+    @State var isFavorite: Bool = false
     
     @Environment(\.presentationMode) var presentation
     
@@ -27,12 +28,27 @@ struct EditingPage: View {
                         Text("截止时间")
                     })
                 }
+                
+                Section{
+                    Toggle(isOn: self.$isFavorite){
+                        Text("收藏")
+                    }
+                }
+                
                 Section{
                     Button(action: {
                         if self.id == nil {
-                            self.UserData.add(data: SingleToDo(title: self.title, duedate: self.duedate))
+                            self.UserData.add(data: SingleToDo(
+                                title: self.title,
+                                duedate: self.duedate,
+                                isFavorite:self.isFavorite
+                            ))
                         }else{
-                            self.UserData.edit(id: self.id!, data: SingleToDo(title: self.title, duedate: self.duedate))
+                            self.UserData.edit(id: self.id!, data: SingleToDo(
+                                title: self.title,
+                                duedate: self.duedate,
+                                isFavorite:self.isFavorite
+                            ))
                         }
                         self.presentation.wrappedValue.dismiss()
                     }){
