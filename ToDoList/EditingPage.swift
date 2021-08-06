@@ -15,11 +15,13 @@ struct EditingPage: View {
     @State var duedate: Date = Date()
     
     @Environment(\.presentationMode) var presentation
-
+    
+    var id:Int? = nil
+    
     var body: some View {
         NavigationView{
             Form{
-                Section(header:Text("新增事项")){
+                Section(header:Text("事项")){
                     TextField("事项内容", text: self.$title)
                     DatePicker(selection: self.$duedate, label: {
                         Text("截止时间")
@@ -27,7 +29,11 @@ struct EditingPage: View {
                 }
                 Section{
                     Button(action: {
-                        self.UserData.add(data: SingleToDo(title: self.title, duedate: self.duedate))
+                        if self.id == nil {
+                            self.UserData.add(data: SingleToDo(title: self.title, duedate: self.duedate))
+                        }else{
+                            self.UserData.edit(id: self.id!, data: SingleToDo(title: self.title, duedate: self.duedate))
+                        }
                         self.presentation.wrappedValue.dismiss()
                     }){
                         Text("确认")
@@ -41,8 +47,11 @@ struct EditingPage: View {
                     }
                 }
             }
-            .navigationBarTitle("添加")
+            .navigationBarTitle(
+                self.id == nil ? "添加" : "编辑"
+            )
         }
+        
     }
 }
 
