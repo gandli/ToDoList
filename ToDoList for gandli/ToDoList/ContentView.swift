@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+var formatter = DateFormatter()
+
 func initUserData() -> [SingleToDo] {
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     var output: [SingleToDo] = []
+    
     if let dataStored = UserDefaults.standard.object(forKey: "ToDoList") as? Data {
         let data = try! decoder.decode([SingleToDo].self, from: dataStored)
         for item in data {
@@ -184,9 +188,11 @@ struct SingleCardView: View {
                     VStack(
                         alignment: .leading, spacing: 6.0,
                         content: {
-                            Text(self.UserData.ToDoList[index].title).font(.headline).fontWeight(.heavy)
+                            Text(self.UserData.ToDoList[index].title).font(.headline)
+                                .fontWeight(.heavy)
                                 .foregroundColor(.black)
-                            Text(self.UserData.ToDoList[index].duedate.description).font(.subheadline)
+                            Text(formatter.string(from: self.UserData.ToDoList[index].duedate))
+                                .font(.subheadline)
                                 .foregroundColor(.gray)
                         }
                     ).padding(.leading)
