@@ -2,7 +2,8 @@
 //  ToDoListUITests.swift
 //  ToDoListUITests
 //
-//  Created by g on 2021/8/7.
+//  Created by Moon on 2020/7/16.
+//  Copyright © 2020 Moon. All rights reserved.
 //
 
 import XCTest
@@ -34,7 +35,7 @@ class ToDoListUITests: XCTestCase {
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
+            measure(metrics: [XCTOSSignpostMetric.applicationLaunch]) {
                 XCUIApplication().launch()
             }
         }
