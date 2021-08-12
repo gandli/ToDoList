@@ -9,7 +9,3 @@ SwiftUITodo 是一个使用 SwiftUI 制作的待办事项列表应用程序，�
 [视频源代码](./ToDoList%20for%20Eastern_Moon)
 
 <!-- ![ToDoLIst](./ToDoLIst.gif) -->
-
-## GIF 
-
-<img src="./ToDoLIst.gif" width="207" height="409" />
